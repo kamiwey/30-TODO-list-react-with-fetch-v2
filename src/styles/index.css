@@ -10,3 +10,60 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+
+body {
+    margin-top: 150px;
+   
+    
+    
+}
+.container {
+    background-color:rgb(249, 245, 240);
+    border: 1px solid rgb(226, 226, 226);
+    box-shadow: 5px 5px 5px 3px rgb(178, 178, 178);
+    width: 700px;
+    
+}
+.title {
+   
+    font-family: 'Montserrat', sans-serif;
+    font-size: 100px;
+    font-weight: 100;
+   
+    
+}
+
+.tasker2{
+    border: none;
+    border-bottom: 1px solid rgb(195, 195, 195);
+    outline: none;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    background-color: transparent;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    
+}
+
+.list-group-item{ 
+   
+
+    background-color:rgb(249, 245, 240);
+    border: 0;
+    border-bottom: 1px solid rgb(195, 195, 195);
+    font-size: 35px;
+    font-family: 'Montserrat', sans-serif;
+   
+      
+}
+.papelera {
+    background-color:rgb(249, 245, 240);
+    float: right;
+    font-size: 25px;
+}
+
+.itemsleft {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
