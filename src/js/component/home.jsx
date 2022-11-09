@@ -1,5 +1,6 @@
 import React from "react";
-import ListaTareas from "./TaskList.jsx";
+import TaskList from "./TaskList.jsx";
+
 
 
 //include images into your bundle
@@ -9,7 +10,7 @@ import ListaTareas from "./TaskList.jsx";
 const Home = () => {
 	return (
 		<div>
-			<ListaTareas />
+		<TaskList />
 		</div>
 	);
 };

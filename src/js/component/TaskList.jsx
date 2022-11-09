@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const ListaTareas = () => {
+const TaskList = () => {
 
     const [task, setTask] = useState('');
     const [list, setList] = useState([]);
@@ -52,4 +52,4 @@ const ListaTareas = () => {
     );
 };
 
-export default ListaTareas
+export default TaskList
