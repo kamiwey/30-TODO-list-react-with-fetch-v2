@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const TaskList = () => {
 
@@ -10,8 +10,78 @@ const TaskList = () => {
         const newArr = [...list]
         newArr.splice(indiElem,1)
         setList(newArr)
-     }
+     };
+
+     const addItem = e => {
+        if (e.key === "Enter") {
+            setList([...list, tarea]);
+            setTask("");
+        }
+     };
     
+    useEffect(() => { 
+        fetch("https://assets.breatheco.de/apis/fake/todos/user/kamiwey", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+
+        .then((resp) => {
+            if (resp.ok) {
+                console.log("Request Success");
+                return resp.json();
+            } else {
+                console.log("Request ERROR" + resp.status);
+            }
+        })
+
+        .then((body) => {
+            console.log("This is the body Request", body);
+            console.log(body.map((t) => t.label));
+            setList(body.map((t) => t.label));
+         })
+
+         .catch((error) => {
+            console.error("ERROR", error);
+         })
+    }, []);
+
+    useEffect(() => {
+        if (list !=null) {
+            fetch("https://assets.breatheco.de/apis/fake/todos/user/kamiwey", {
+                method: "PUT",
+                body: JSON.stringify(
+                    list.map((item) => ({
+                        label: item,
+                        done: false
+                    }))
+                ),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
+
+            .then((res) => {
+                if (res.ok) {
+                    console.log("PUT Request Success");
+                    return res.json();
+                } else {
+                    console.log("PUT Request ERROR" + res.status);
+                }
+            })
+
+            .then(async (response) => {
+                console.log("Success", await response);
+            })
+            .catch((error) => console.error(error));
+        }
+    }, [list]);
+
+    if (list == null) {
+        return null;
+    }
+
     return (
         <div className="container">
             <h1 className="title text-muted text-center">Todos</h1>
