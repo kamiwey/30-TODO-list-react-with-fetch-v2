@@ -4,7 +4,7 @@ First make sure to choose your platform:
 
 ## Deploying to Github pages:
 
-It's great for small projects that don't require your own domain or real use with users and growth, for example: Personal portfolio websites.
+It's great for small projects that don'e require your own domain or real use with users and growth, for example: Personal portfolio websites.
 
 ```sh
 $ npm run deploy:github
